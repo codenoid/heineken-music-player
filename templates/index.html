@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Heineken Music Player - github.com/codenoid</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineMax.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Wave bg-->
+        <div class="wave-container">
+            <div class="wave -one"></div>
+            <div class="wave -two"></div>
+            <div class="wave -three"></div>
+        </div>
+        <div class="line"></div>
+        <div class="text-wrap">
+            <div class="text"><span>L</span><span>I</span><span>S</span><span>T</span><span>E</span><span>N</span>
+                <div class="main-btn_wrapper"><i class="main-btn fa fa-play" aria-hidden="true"></i></div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="burger-wrapper">
+                <div class="burger"></div>
+            </div>
+            <div class="logo-text">Listeners Playlist</div>
+            <div class="back_btn">
+                <div class="circle"></div>
+                <div class="text">Back</div>
+            </div>
+        </div>
+        <div class="nav">
+            <ul class="nav_main">
+                <li> <a class="nav_link">Home</a></li>
+                <li> <a class="nav_link">Listeners</a></li>
+                <li> <a class="nav_link">Compilations</a></li>
+                <li> <a class="nav_link">LP. Mix</a></li>
+            </ul>
+            <div class="nav_divider"></div>
+            <ul class="nav_sub">
+                <li><a class="nav_link" href="">About   </a></li>
+                <li><a class="nav_link" href="">Contact </a></li>
+            </ul>
+        </div>
+        <div class="mini-player">
+            <div class="track_info_wrapper">
+                <div class="track_info">
+                    <div class="thumb"></div>
+                    <div class="info">
+                        <div class="title">Friday Comes</div>
+                        <div class="artist">Early</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-player_btn_wrapper"><i class="btn-prev fa fa-step-backward" aria-hidden="true"></i>
+                <div class="btn-switch"><i class="btn-play fa fa-play" aria-hidden="true"></i><i class="btn-pause fa fa-pause" aria-hidden="true"></i></div><i class="btn-next fa fa-step-forward" aria-hidden="true"></i><i class="btn-open-player fa fa-list" aria-hidden="true"></i></div>
+        </div>
+        <div class="dim"></div>
+        <div class="player" id="player">
+            <div class="playback_wrapper">
+                <div class="playback_blur"></div>
+                <div class="playback_thumb"></div>
+                <div class="playback_info">
+                    <div class="title">Friday Comes</div>
+                    <div class="artist">Early</div>
+                </div>
+                <div class="playback_btn_wrapper"><i class="btn-prev fa fa-step-backward" aria-hidden="true"></i>
+                    <div class="btn-switch"><i class="btn-play fa fa-play" aria-hidden="true"></i><i class="btn-pause fa fa-pause" aria-hidden="true"></i></div><i class="btn-next fa fa-step-forward" aria-hidden="true"></i></div>
+                <div class="playback_timeline">
+                    <div class="playback_timeline_start-time">00:31</div>
+                    <div class="playback_timeline_slider">
+                        <div class="slider_base"></div>
+                        <div class="slider_progress"></div>
+                        <div class="slider_handle"></div>
+                    </div>
+                    <div class="playback_timeline_end-time">03:11</div>
+                </div>
+            </div>
+            <div class="list_wrapper">
+                <ul class="list">
+                    <li class="list_item selected">
+                        <div class="thumb"> </div>
+                        <div class="info">
+                            <div class="title">Friday Comes</div>
+                            <div class="artist">Early</div>
+                        </div>
+                    </li>
+                    <li class="list_item">
+                        <div class="thumb"> </div>
+                        <div class="info">
+                            <div class="title">Friday Comes</div>
+                            <div class="artist">Early</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8" src="/assets/app.js"></script>
+</body>
+</html>
+<!-- https://codepen.io/jinnrw/pen/ggpgVe -->
