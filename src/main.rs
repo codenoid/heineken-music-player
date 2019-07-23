@@ -26,6 +26,11 @@ fn assets(req: HttpRequest) -> Result<NamedFile> {
     Ok(NamedFile::open(file)?)
 }
 
+fn music(req: HttpRequest) -> Result<NamedFile> {
+    let file = format!("./assets/music/{}", req.match_info().get("file").unwrap());
+    Ok(NamedFile::open(file)?)
+}
+
 fn list_music() -> HttpResponse {
 
     HttpResponse::Ok()
@@ -37,16 +42,27 @@ fn refresh_music() -> HttpResponse {
 
     update_music();
 
+    // just ok
+    // ;)
     HttpResponse::Ok()
         .content_type("text/plain")
         .body("ok")
 }
 
 fn update_music() {
+
+    // empty/truncate a Vector, then append all listed music
+    // another way is to not truncate the vector, but just append a new file
+    // but if there any deleted/updated file, so vector value will not updated
+    MUSICS.lock().unwrap().truncate(0);
+
     let paths = fs::read_dir("./assets/music").unwrap();
 
     for path in paths {
-        MUSICS.lock().unwrap().push(path.unwrap().file_name().into_string().unwrap());
+        let file_name = path.unwrap().file_name().into_string().unwrap();
+        if file_name.contains(".mp3") {
+            MUSICS.lock().unwrap().push(file_name);
+        }
     }
 }
 
@@ -59,6 +75,7 @@ fn main() {
             .route("/", web::get().to(index))
             .route("/music", web::get().to(list_music))
             .route("/refresh", web::get().to(refresh_music))
+            .route("/assets/music/{file}", web::get().to(music))
             .route("/assets/{file}", web::get().to(assets))
     })
     .bind("127.0.0.1:3003")

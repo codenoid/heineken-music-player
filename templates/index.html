@@ -36,15 +36,13 @@
         </div>
         <div class="nav">
             <ul class="nav_main">
-                <li> <a class="nav_link">Home</a></li>
-                <li> <a class="nav_link">Listeners</a></li>
-                <li> <a class="nav_link">Compilations</a></li>
-                <li> <a class="nav_link">LP. Mix</a></li>
+                <li> <a class="nav_link" href="/">Home</a></li>
+                <li> <a class="nav_link" href="#">Add Song</a></li>
             </ul>
             <div class="nav_divider"></div>
             <ul class="nav_sub">
-                <li><a class="nav_link" href="">About   </a></li>
-                <li><a class="nav_link" href="">Contact </a></li>
+                <li><a class="nav_link" target="_blank" href="https://codepen.io/jinnrw/pen/ggpgVe">Template Credit</a></li>
+                <li><a class="nav_link" target="_blank" href="https://github.com/codenoid/heineken-music-player">App Credit</a></li>
             </ul>
         </div>
         <div class="mini-player">
@@ -52,13 +50,13 @@
                 <div class="track_info">
                     <div class="thumb"></div>
                     <div class="info">
-                        <div class="title">Friday Comes</div>
-                        <div class="artist">Early</div>
+                        <div class="title e">Choose Song</div>
+                        <div class="artist">Artist Name</div>
                     </div>
                 </div>
             </div>
-            <div class="mini-player_btn_wrapper"><i class="btn-prev fa fa-step-backward" aria-hidden="true"></i>
-                <div class="btn-switch"><i class="btn-play fa fa-play" aria-hidden="true"></i><i class="btn-pause fa fa-pause" aria-hidden="true"></i></div><i class="btn-next fa fa-step-forward" aria-hidden="true"></i><i class="btn-open-player fa fa-list" aria-hidden="true"></i></div>
+            <div class="mini-player_btn_wrapper"><a href="#" onclick="refreshTracks()" title="Refresh track list"><i class="btn-prev fa fa-refresh" aria-hidden="true"></i></a>
+                <i class="btn-open-player fa fa-list" aria-hidden="true"></i></div>
         </div>
         <div class="dim"></div>
         <div class="player" id="player">
@@ -66,41 +64,24 @@
                 <div class="playback_blur"></div>
                 <div class="playback_thumb"></div>
                 <div class="playback_info">
-                    <div class="title">Friday Comes</div>
-                    <div class="artist">Early</div>
+                    <div class="title e">Choose Song</div>
+                    <div class="artist">Artist Name</div>
                 </div>
-                <div class="playback_btn_wrapper"><i class="btn-prev fa fa-step-backward" aria-hidden="true"></i>
-                    <div class="btn-switch"><i class="btn-play fa fa-play" aria-hidden="true"></i><i class="btn-pause fa fa-pause" aria-hidden="true"></i></div><i class="btn-next fa fa-step-forward" aria-hidden="true"></i></div>
-                <div class="playback_timeline">
-                    <div class="playback_timeline_start-time">00:31</div>
-                    <div class="playback_timeline_slider">
-                        <div class="slider_base"></div>
-                        <div class="slider_progress"></div>
-                        <div class="slider_handle"></div>
-                    </div>
-                    <div class="playback_timeline_end-time">03:11</div>
+                <div class="playback_btn_wrapper">
+                    <audio onended="nextMusic()" controls>
+                      <source src="" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio>
                 </div>
             </div>
             <div class="list_wrapper">
-                <ul class="list">
-                    <li class="list_item selected">
-                        <div class="thumb"> </div>
-                        <div class="info">
-                            <div class="title">Friday Comes</div>
-                            <div class="artist">Early</div>
-                        </div>
-                    </li>
-                    <li class="list_item">
-                        <div class="thumb"> </div>
-                        <div class="info">
-                            <div class="title">Friday Comes</div>
-                            <div class="artist">Early</div>
-                        </div>
-                    </li>
+                <ul class="list" id="track-list">
+                    <!-- app.js:35 goes here -->
                 </ul>
             </div>
         </div>
     </div>
+    <script type="text/javascript" charset="utf-8" src="/assets/index.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/app.js"></script>
 </body>
 </html>

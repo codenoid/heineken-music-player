@@ -374,12 +374,9 @@ body {
 .playback_btn_wrapper {
   position: absolute;
   z-index: 10;
-  mix-blend-mode: color-burn;
-  width: 124px;
-  left: 55px;
-  top: 240px;
-  opacity: 0.6;
-  display: flex;
+  width: 100% !important;
+  left: 40px;
+  top: 220px;
   justify-content: space-between;
 }
 .playback_btn_wrapper i {
