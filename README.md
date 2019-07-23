@@ -2,7 +2,7 @@
 
 Web-based music player as part of rust-learning-journal
 
-![Screenshot](https://raw.githubusercontent.com/codenoid/heineken-music-player/assets/screenshot-1.png)
+![Screenshot](https://raw.githubusercontent.com/codenoid/heineken-music-player/master/assets/screenshot-1.png)
 
 ## Installation
 
