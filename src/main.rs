@@ -1,13 +1,13 @@
 #[macro_use]
 extern crate lazy_static;
 
-use std::fs;
-use serde_json::json;
-use actix_web::HttpResponse;
-use actix_web::HttpRequest;
 use actix_files::NamedFile;
-use actix_web::{App, web, HttpServer, Result};
-use actix_web::http::{StatusCode};
+use actix_web::http::StatusCode;
+use actix_web::HttpRequest;
+use actix_web::HttpResponse;
+use actix_web::{web, App, HttpServer, Result};
+use serde_json::json;
+use std::fs;
 
 use std::sync::Mutex;
 
@@ -32,25 +32,20 @@ fn music(req: HttpRequest) -> Result<NamedFile> {
 }
 
 fn list_music() -> HttpResponse {
-
     HttpResponse::Ok()
         .content_type("application/json")
         .body(json!(&*MUSICS.lock().unwrap()).to_string())
 }
 
 fn refresh_music() -> HttpResponse {
-
     update_music();
 
     // just ok
     // ;)
-    HttpResponse::Ok()
-        .content_type("text/plain")
-        .body("ok")
+    HttpResponse::Ok().content_type("text/plain").body("ok")
 }
 
 fn update_music() {
-
     // empty/truncate a Vector, then append all listed music
     // another way is to not truncate the vector, but just append a new file
     // but if there any deleted/updated file, so vector value will not updated
@@ -67,7 +62,6 @@ fn update_music() {
 }
 
 fn main() {
-
     update_music();
 
     HttpServer::new(|| {
