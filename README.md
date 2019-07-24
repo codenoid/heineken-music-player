@@ -4,6 +4,10 @@ Web-based music player as part of rust-learning-journal
 
 ![Screenshot](https://raw.githubusercontent.com/codenoid/heineken-music-player/master/assets/screenshot-1.png)
 
+and because i hate this :
+
+![Jeezer](https://raw.githubusercontent.com/codenoid/heineken-music-player/master/assets/screenshot-2.png)
+
 ## Installation
 
 1. Install Rust
