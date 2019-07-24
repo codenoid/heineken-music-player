@@ -53,14 +53,15 @@ function play(fname) {
 
 	var audio = document.getElementsByTagName("audio")[0]
 	
-	var source = $("audio > source").attr("src", `/assets/music/${fname}`)
+	$("audio > source").attr("src", `/assets/music/${fname}`)
+	$("audio > source").attr("file", fname)
 
   	audio.load(); //call this to just preload the audio without playing
   	audio.play();
 }
 
 function nextMusic() {
-	var currentItem = $("audio > source").attr("src")
+	var currentItem = $("audio > source").attr("file")
 	var currentIndex = tracksArr.indexOf(currentItem);
 	var nextIndex = (currentIndex + 1) % tracksArr.length;
 	play(tracksArr[nextIndex])
